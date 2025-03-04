@@ -33,11 +33,11 @@ detectEndCord(){
     MouseGetPos &x2, &y2
     
     filePath := "output.txt"  ; Путь к файлу
-    FileAppend("mouseClick(" . x1 . ", " . y1 . ", " . x2 . ", " . y2 . ")`n", filePath)
+    FileAppend("UserMouseClick(" . x1 . ", " . y1 . ", " . x2 . ", " . y2 . ")`n", filePath)
 }
 
 F1::detectStartCord()
 F2::detectEndCord()
 
-; Пример: Проверяем цвет пикселя в координатах (100, 200)
+; Пример: Проверяем цвет пикселя в координатах мыши
 F3::CheckPixelColor()
