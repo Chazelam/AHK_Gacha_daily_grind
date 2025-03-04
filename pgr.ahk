@@ -125,7 +125,7 @@ AutoDorm() {
         Send('{Esc}')
         Sleep(1000)
     }
-    
+
     ; Shop
     dormShop := 0
     ; Build
@@ -187,21 +187,21 @@ AutoGuild(){
     Chores := 0
     ; Chores Tab
     if (Chores == 1){
-        UserClick(1021, 632, 1099, 698) ; Enter Chores Tab
-        UserClick(181, 227, 434, 303)   ; Start Chores
+        UserMouseClick(1021, 632, 1099, 698) ; Enter Chores Tab
+        UserMouseClick(181, 227, 434, 303)   ; Start Chores
         ; Row 1
-        UserClick(245, 180, 465,  270)
-        UserClick(515, 180, 745,  270)
-        UserClick(795, 180, 1015, 270)
+        UserMouseClick(245, 180, 465,  270)
+        UserMouseClick(515, 180, 745,  270)
+        UserMouseClick(795, 180, 1015, 270)
         ; Row 2
-        UserClick(245, 315, 465,  400)
-        UserClick(515, 315, 745,  400)
-        UserClick(795, 315, 1015, 400)
+        UserMouseClick(245, 315, 465,  400)
+        UserMouseClick(515, 315, 745,  400)
+        UserMouseClick(795, 315, 1015, 400)
         ; Row 3
-        UserClick(245, 452, 471, 533)
-        UserClick(515, 447, 743, 533)
+        UserMouseClick(245, 452, 471, 533)
+        UserMouseClick(515, 447, 743, 533)
 
-        UserClick(867, 619, 1014, 652) ; Begin Chores
+        UserMouseClick(867, 619, 1014, 652) ; Begin Chores
         Send('{Esc}')
         Sleep(1000)
     }
@@ -210,30 +210,30 @@ AutoGuild(){
     dormShop := 0
 
     ; Build
-    UserClick(41, 647, 171, 684)   ; Open Build Tab
-    UserClick(919, 262, 1074, 414) ; Select type
-    UserClick(285, 198, 428, 233)  ; Select Floor
-    UserClick(896, 611, 1054, 646) ; Confirm
-    UserClick(568, 625, 600, 655)  ; +1
-    UserClick(568, 625, 600, 655)  ; +1
-    UserClick(960, 618, 1180, 655) ; Craft
-    UserClick(782, 496, 939, 535)  ; Confirm
+    UserMouseClick(41, 647, 171, 684)   ; Open Build Tab
+    UserMouseClick(919, 262, 1074, 414) ; Select type
+    UserMouseClick(285, 198, 428, 233)  ; Select Floor
+    UserMouseClick(896, 611, 1054, 646) ; Confirm
+    UserMouseClick(568, 625, 600, 655)  ; +1
+    UserMouseClick(568, 625, 600, 655)  ; +1
+    UserMouseClick(960, 618, 1180, 655) ; Craft
+    UserMouseClick(782, 496, 939, 535)  ; Confirm
     Sleep(5000) ; Wait to complite
-    UserClick(782, 496, 939, 535)  ; Confirm if new pop-up
+    UserMouseClick(782, 496, 939, 535)  ; Confirm if new pop-up
 
-    UserClick(953, 151, 1058, 180) ; Recycle
-    UserClick(983, 157, 1006, 175) ; C-Rank
-    UserClick(888, 159, 908, 176)  ; B-Rank
-    UserClick(787, 158, 808, 174)  ; A-Rank
-    UserClick(901, 602, 1051, 634) ; Recycle
-    UserClick(901, 602, 1051, 634) ; Confirm
+    UserMouseClick(953, 151, 1058, 180) ; Recycle
+    UserMouseClick(983, 157, 1006, 175) ; C-Rank
+    UserMouseClick(888, 159, 908, 176)  ; B-Rank
+    UserMouseClick(787, 158, 808, 174)  ; A-Rank
+    UserMouseClick(901, 602, 1051, 634) ; Recycle
+    UserMouseClick(901, 602, 1051, 634) ; Confirm
     Send('{Esc}')
     Sleep(1000)
 
     ; Missions
-    UserClick(997, 86, 1231, 131)   ; Open Missions Tab
-    UserClick(1072, 123, 1229, 173) ; Claim All
-    UserClick(1072, 123, 1229, 173) ; Confirm
+    UserMouseClick(997, 86, 1231, 131)   ; Open Missions Tab
+    UserMouseClick(1072, 123, 1229, 173) ; Claim All
+    UserMouseClick(1072, 123, 1229, 173) ; Confirm
 
 }
 
