@@ -94,7 +94,7 @@ AutoDorm() {
     UserMouseClick(864, 384, 977, 431)   ; Enter Dorm
     UserMouseClick(887, 628, 959, 700)   ; Pat all
     UserMouseClick(887, 628, 959, 700)   ; Confirm
-
+    Sleep(3000)
     ; Commission Tab
     UserMouseClick(1152, 631, 1227, 702) ; Enter tab
     UserMouseClick(25, 601, 125, 694)    ; CLaim All
@@ -104,30 +104,38 @@ AutoDorm() {
     Send('{Esc}')
     Sleep(1000)
 
-    Chores := 0
     ; Chores Tab
-    if (Chores == 1) {
-        UserMouseClick(1021, 632, 1099, 698) ; Enter Chores Tab
-        UserMouseClick(181, 227, 434, 303)   ; Start Chores
-        ; Row 1
-        UserMouseClick(245, 180, 465, 270)
-        UserMouseClick(515, 180, 745, 270)
-        UserMouseClick(795, 180, 1015, 270)
-        ; Row 2
-        UserMouseClick(245, 315, 465, 400)
-        UserMouseClick(515, 315, 745, 400)
-        UserMouseClick(795, 315, 1015, 400)
-        ; Row 3
-        UserMouseClick(245, 452, 471, 533)
-        UserMouseClick(515, 447, 743, 533)
+    UserMouseClick(1021, 632, 1099, 698) ; Enter Chores Tab
+    UserMouseClick(181, 227, 434, 303)   ; Claim Chores
+    UserMouseClick(181, 227, 434, 303)   ; Confirm
+    UserMouseClick(181, 227, 434, 303)   ; Start Chores
+    ; Row 1
+    UserMouseClick(245, 180, 465, 270)
+    UserMouseClick(515, 180, 745, 270)
+    UserMouseClick(795, 180, 1015, 270)
+    ; Row 2
+    UserMouseClick(245, 315, 465, 400)
+    UserMouseClick(515, 315, 745, 400)
+    UserMouseClick(795, 315, 1015, 400)
+    ; Row 3
+    UserMouseClick(245, 452, 471, 533)
+    UserMouseClick(515, 447, 743, 533)
 
-        UserMouseClick(867, 619, 1014, 652) ; Begin Chores
-        Send('{Esc}')
-        Sleep(1000)
+    UserMouseClick(867, 619, 1014, 652) ; Begin Chores
+    Send('{Esc}')
+    Sleep(1000)
+    UserMouseClick(214, 656, 317, 681)
+
+    ; ; Shop
+    color := PixelGetColor(424, 268)
+    if IsSimilarColor(color, "0x125162"){
+        UserMouseClick(316, 236, 501, 623)
+        UserMouseClick(558, 648, 642, 681)
+        UserMouseClick(727, 650, 937, 682)
     }
+    Send('{Esc}')
+    Sleep(1000)
 
-    ; Shop
-    dormShop := 0
     ; Build
     UserMouseClick(41, 647, 171, 684)   ; Open Build Tab
     UserMouseClick(919, 262, 1074, 414) ; Select type
@@ -153,6 +161,10 @@ AutoDorm() {
     UserMouseClick(997, 86, 1231, 131)   ; Open Missions Tab
     UserMouseClick(1072, 123, 1229, 173) ; Claim All
     UserMouseClick(1072, 123, 1229, 173) ; Confirm
+    Send('{Esc}')
+    Sleep(1000)
+    Send('{Esc}')
+    Sleep(1000)
 
 }
 
@@ -179,65 +191,12 @@ AutoGuild(){
     Sleep(2000)
     Click "up"
     UserMouseClick(945, 331, 1045, 371)
-    Send('{Esc}')
     Sleep(1000)
     Send('{Esc}')
     Sleep(1000)
-
-    Chores := 0
-    ; Chores Tab
-    if (Chores == 1){
-        UserMouseClick(1021, 632, 1099, 698) ; Enter Chores Tab
-        UserMouseClick(181, 227, 434, 303)   ; Start Chores
-        ; Row 1
-        UserMouseClick(245, 180, 465,  270)
-        UserMouseClick(515, 180, 745,  270)
-        UserMouseClick(795, 180, 1015, 270)
-        ; Row 2
-        UserMouseClick(245, 315, 465,  400)
-        UserMouseClick(515, 315, 745,  400)
-        UserMouseClick(795, 315, 1015, 400)
-        ; Row 3
-        UserMouseClick(245, 452, 471, 533)
-        UserMouseClick(515, 447, 743, 533)
-
-        UserMouseClick(867, 619, 1014, 652) ; Begin Chores
-        Send('{Esc}')
-        Sleep(1000)
-    }
-
-    ; Shop
-    dormShop := 0
-
-    ; Build
-    UserMouseClick(41, 647, 171, 684)   ; Open Build Tab
-    UserMouseClick(919, 262, 1074, 414) ; Select type
-    UserMouseClick(285, 198, 428, 233)  ; Select Floor
-    UserMouseClick(896, 611, 1054, 646) ; Confirm
-    UserMouseClick(568, 625, 600, 655)  ; +1
-    UserMouseClick(568, 625, 600, 655)  ; +1
-    UserMouseClick(960, 618, 1180, 655) ; Craft
-    UserMouseClick(782, 496, 939, 535)  ; Confirm
-    Sleep(5000) ; Wait to complite
-    UserMouseClick(782, 496, 939, 535)  ; Confirm if new pop-up
-
-    UserMouseClick(953, 151, 1058, 180) ; Recycle
-    UserMouseClick(983, 157, 1006, 175) ; C-Rank
-    UserMouseClick(888, 159, 908, 176)  ; B-Rank
-    UserMouseClick(787, 158, 808, 174)  ; A-Rank
-    UserMouseClick(901, 602, 1051, 634) ; Recycle
-    UserMouseClick(901, 602, 1051, 634) ; Confirm
     Send('{Esc}')
     Sleep(1000)
-
-    ; Missions
-    UserMouseClick(997, 86, 1231, 131)   ; Open Missions Tab
-    UserMouseClick(1072, 123, 1229, 173) ; Claim All
-    UserMouseClick(1072, 123, 1229, 173) ; Confirm
-
 }
-
-WinActivate("PGR")
 
 ; ==================================================
 ; Char shards
@@ -251,6 +210,7 @@ AutoCharShards(){
         MouseClick("WheelUp")
         Sleep(10)
     }
+    Sleep(5000)
 
     ; Bambi
     UserMouseClick(297, 183, 449, 580)
@@ -262,14 +222,17 @@ AutoCharShards(){
     Sleep(1000)
     Send('{Esc}')
     Sleep(1000)
-    ; Hanung
-    UserMouseClick(492, 186, 642, 581)
-    UserMouseClick(954, 638, 1045, 676)
-    UserMouseClick(296, 509, 356, 535)
-    UserMouseClick(1032, 503, 1239, 538)
-    UserMouseClick(1101, 652, 1224, 675)
-    Send('{Esc}')
-    Sleep(1000)
+    ; ; Hanung
+    ; UserMouseClick(492, 186, 642, 581)
+    ; UserMouseClick(954, 638, 1045, 676)
+    ; UserMouseClick(296, 509, 356, 535)
+    ; UserMouseClick(1032, 503, 1239, 538)
+    ; UserMouseClick(1101, 652, 1224, 675)
+    ; Send('{Esc}')
+    ; Sleep(1000)
+    ; Send('{Esc}')
+    ; Sleep(1000)
+
     Send('{Esc}')
     Sleep(1000)
 }
@@ -299,17 +262,21 @@ AutoTopUp(){
 ; Serum and missions
 ; ==================================================
 AutoMission(){
-    UserMouseClick(895, 251, 1038, 282)  ; Enter missions
-    UserMouseClick(36, 298, 198, 314)    ; Daily Missions
-    UserMouseClick(1076, 125, 1227, 174) ; Claim All
-    UserMouseClick(1076, 125, 1227, 174) ; Confirm
-    Send('{Esc}')
-    Sleep(1000)
+    ; if cloer
+    ; UserMouseClick(895, 251, 1038, 282)  ; Enter missions
+    ; UserMouseClick(36, 298, 198, 314)    ; Daily Missions
+    ; UserMouseClick(1076, 125, 1227, 174) ; Claim All
+    ; UserMouseClick(1076, 125, 1227, 174) ; Confirm
+    ; Send('{Esc}')
+    ; Sleep(1000)
     
     UserMouseClick(1073, 179, 1234, 238) ; Events page  
     UserMouseClick(291, 94, 407, 136)    ; Farm Event
-    
-    UserMouseClick(447, 188, 805, 509) ; Auto
+    Sleep(1000)
+
+    UserMouseClick(416, 137, 892, 586)
+    UserMouseClick(884, 641, 987, 680) ; Auto
+
     UserMouseClick(1100, 656, 1215, 684) ; Confirm
     Send('{Esc}')
     Sleep(1000)
@@ -324,13 +291,14 @@ AutoMission(){
     UserMouseClick(1076, 125, 1227, 174) ; Confirm
     UserMouseClick(1178, 623, 1214, 651)
     ; BP
-    mouseClick(319, 86, 357, 106)
-    mouseClick(45, 434, 215, 461)
-    mouseClick(996, 646, 1210, 679)
+    UserMouseClick(319, 86, 357, 106)
+    UserMouseClick(45, 434, 215, 461)
+    UserMouseClick(996, 646, 1210, 679)
 }
 
 
 AutoLogin()
+WinActivate("PGR")
 AutoDorm()
 AutoFreeSerum()
 AutoGuild()
